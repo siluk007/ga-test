@@ -1,7 +1,8 @@
 import ReactGA from 'react-ga';
 import TagManager from 'react-gtm-module'
 import { gtag, install } from 'ga-gtag';
-const google_key = "G-5T1EE05PEF";
+// const google_key = "G-5T1EE05PEF";
+const google_key = "G-D2KQ2NJB5B";
 let is_initialize = false;
 
 
