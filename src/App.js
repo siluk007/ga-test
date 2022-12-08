@@ -1,12 +1,12 @@
 import './App.css';
 import Main from "./Main";
-import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
+import {Route, Routes, Link} from 'react-router-dom'
 import About from "./About";
 import Analytics from "./Analytics"
 
 function App() {
   return (
-      <Router>
+      <div>
           <Analytics/>
         <div>
           <nav>
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/about" element={<About/>}/>
           </Routes>
         </div>
-      </Router>
+      </div>
   );
 }
 
