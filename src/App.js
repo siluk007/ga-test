@@ -2,10 +2,12 @@ import './App.css';
 import Main from "./Main";
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 import About from "./About";
+import Analytics from "./Analytics"
 
 function App() {
   return (
       <Router>
+          <Analytics/>
         <div>
           <nav>
             <Link to={"/"} >Main</Link>
