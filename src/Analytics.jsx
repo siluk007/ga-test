@@ -1,6 +1,6 @@
 import {useLocation} from "react-router-dom";
 import React, {useEffect, useState} from "react";
-import gAnalytics from './gAnalytics'
+import {gaInitialize, gaPageView} from './gAnalytics'
 
 function Analytics(){
     const [analytics_initialized, setAnalyticsUsed] = useState(false);
@@ -8,13 +8,13 @@ function Analytics(){
     const location = useLocation();
 
     if (!analytics_initialized) {
-        gAnalytics.gaInitialize()
+        gaInitialize()
         setAnalyticsUsed(true)
     }
 
     useEffect(() => {
         if (analytics_initialized) {
-            gAnalytics.gaPageView();
+            gaPageView();
         }
     }, [location]);
 

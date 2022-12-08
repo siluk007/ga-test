@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import gAnalytics from "./gAnalytics";
+import {gaEvent} from "./gAnalytics";
 
 function About() {
     const buttonClick = (text) => {
-        gAnalytics.gaEvent("Study", "get Answer");
+        gaEvent('event', `click ${text}`);
     }
     return (
         <div className="App">
@@ -13,8 +13,8 @@ function About() {
                 <p>About page</p>
                 <p><a href="https://github.com/siluk007/siluk007.github.io" target="_blank">Go to github</a></p>
                 <div >
-                    <button onClick={() => buttonClick('first answer')}>first answer</button>
-                    <button onClick={() => buttonClick('second answer')}>second answer</button>
+                    <button onClick={() => buttonClick('third answer')}>third answer</button>
+                    <button onClick={() => buttonClick('fourth answer')}>fourth answer</button>
                 </div>
             </header>
         </div>

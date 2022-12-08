@@ -1,11 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import gAnalytics from './gAnalytics'
+import {gaEvent} from "./gAnalytics";
+import {useState} from "react";
 
 function Main() {
+    const [count, setCount] = useState(0)
     const buttonClick = (text) => {
-        gAnalytics.gaEvent("Study", "get Answer");
+        gaEvent('event', `click ${text}`);
+        setCount(count + 1);
     }
+    function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+    let rand_number = getRandom(0, 100)
     return (
         <div className="App">
             <header className="App-header">
@@ -13,6 +20,7 @@ function Main() {
                 <div >
                     <button onClick={() => buttonClick('first answer')}>first answer</button>
                     <button onClick={() => buttonClick('second answer')}>second answer</button>
+                    <button onClick={() => buttonClick(rand_number)}>random {rand_number}</button>
                 </div>
             </header>
         </div>
