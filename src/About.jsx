@@ -7,6 +7,7 @@ function About() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>About page</p>
+                <p><a href="https://github.com/siluk007/siluk007.github.io" target="_blank">Go to github</a></p>
             </header>
         </div>
     );
