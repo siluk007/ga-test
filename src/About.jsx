@@ -4,7 +4,7 @@ import {gaEvent} from "./gAnalytics";
 
 function About() {
     const buttonClick = (text) => {
-        gaEvent('event', `click ${text}`);
+        gaEvent('event', `custom_click`, {page: 'about', button: text});
     }
     return (
         <div className="App">

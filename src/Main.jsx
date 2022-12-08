@@ -6,7 +6,11 @@ import {useState} from "react";
 function Main() {
     const [count, setCount] = useState(0)
     const buttonClick = (text) => {
-        gaEvent('event', `click ${text}`);
+        gaEvent('event', `custom_click`, {page: 'main', button: text});
+        setCount(count + 1);
+    }
+    const randButtonClick = (text) => {
+        gaEvent('event', `custom_click`, {page: 'main', button: 'custom button', number: text});
         setCount(count + 1);
     }
     function getRandom(min, max) {
@@ -20,7 +24,7 @@ function Main() {
                 <div >
                     <button onClick={() => buttonClick('first answer')}>first answer</button>
                     <button onClick={() => buttonClick('second answer')}>second answer</button>
-                    <button onClick={() => buttonClick(rand_number)}>random {rand_number}</button>
+                    <button onClick={() => randButtonClick(rand_number)}>random {rand_number}</button>
                 </div>
             </header>
         </div>
