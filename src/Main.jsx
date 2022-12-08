@@ -10,7 +10,7 @@ function Main() {
         setCount(count + 1);
     }
     const randButtonClick = (text) => {
-        gaEvent('event', `custom_click`, {page: 'main', button: 'custom button', number: text});
+        gaEvent('event', `custom_click`, {page: 'main', button: `rand ${text}`});
         setCount(count + 1);
     }
     function getRandom(min, max) {
