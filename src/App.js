@@ -5,7 +5,6 @@ import About from "./About";
 import Analytics from "./Analytics"
 
 function App() {
-    console.log('render app')
   return (
       <Router>
           <Analytics/>
