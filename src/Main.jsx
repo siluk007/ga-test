@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {gaEvent} from "./gAnalytics";
 import {useState} from "react";
+import DocumentMeta from 'react-document-meta';
 
 function Main() {
     const [count, setCount] = useState(0)
@@ -16,18 +17,32 @@ function Main() {
     function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     }
-    let rand_number = getRandom(0, 100)
+    let rand_number = getRandom(0, 100);
+
+    const meta = {
+        title: 'Main page title',
+        description: 'Main page description',
+        canonical: 'https://siluk007.github.io/',
+        meta: {
+            charset: 'utf-8',
+            name: {
+                keywords: 'react,meta,document,html,tags,main'
+            }
+        }
+    };
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <div >
-                    <button onClick={() => buttonClick('first answer')}>first answer</button>
-                    <button onClick={() => buttonClick('second answer')}>second answer</button>
-                    <button onClick={() => randButtonClick(rand_number)}>random {rand_number}</button>
-                </div>
-            </header>
-        </div>
+        <DocumentMeta {...meta}>
+            <div className="App">
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <div >
+                        <button onClick={() => buttonClick('first answer')}>first answer</button>
+                        <button onClick={() => buttonClick('second answer')}>second answer</button>
+                        <button onClick={() => randButtonClick(rand_number)}>random {rand_number}</button>
+                    </div>
+                </header>
+            </div>
+        </DocumentMeta>
     );
 }
 
