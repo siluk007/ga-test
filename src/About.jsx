@@ -19,6 +19,7 @@ function About() {
             }
         }
     };
+
     return (
         <DocumentMeta {...meta}>
             <div className="App">
