@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import {gaEvent} from "./gAnalytics";
-import {useState} from "react";
-import DocumentMeta from 'react-document-meta';
+import {useState, useEffect} from "react";
 
 function Main() {
     const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        gaEvent('_set', `title`, 'New Main page');
+        gaEvent('_trackPageview');
+    }, []);
+
     const buttonClick = (text) => {
         gaEvent('event', `custom_click`, {page: 'main', button: text});
         setCount(count + 1);
@@ -19,30 +24,18 @@ function Main() {
     }
     let rand_number = getRandom(0, 100);
 
-    const meta = {
-        title: 'Main page title',
-        description: 'Main page description',
-        canonical: 'https://siluk007.github.io/',
-        meta: {
-            charset: 'utf-8',
-            name: {
-                keywords: 'react,meta,document,html,tags,main'
-            }
-        }
-    };
     return (
-        <DocumentMeta {...meta}>
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <div >
-                        <button onClick={() => buttonClick('first answer')}>first answer</button>
-                        <button onClick={() => buttonClick('second answer')}>second answer</button>
-                        <button onClick={() => randButtonClick(rand_number)}>random {rand_number}</button>
-                    </div>
-                </header>
-            </div>
-        </DocumentMeta>
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <div >
+                    <button onClick={() => buttonClick('first answer')}>first answer</button>
+                    <button onClick={() => buttonClick('second answer')}>second answer</button>
+                    <button onClick={() => randButtonClick(rand_number)}>random {rand_number}</button>
+                </div>
+            </header>
+        </div>
+
     );
 }
 
