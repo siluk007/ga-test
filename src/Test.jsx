@@ -18,7 +18,9 @@ function Test() {
         return Math.floor(Math.random() * (max - min) + min);
     }
     let rand_number = getRandom(0, 100);
-
+    useEffect(() => {
+        document.title = 'Test';
+    }, []);
     return (
         <div className="App">
             <header className="App-header">

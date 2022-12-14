@@ -7,6 +7,9 @@ function About() {
     const buttonClick = (text) => {
         gaEvent('event', `custom_click`, {page: 'about', button: text});
     }
+    useEffect(() => {
+        document.title = 'About';
+    }, []);
 
     return (
         <div className="App">
