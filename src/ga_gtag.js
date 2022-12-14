@@ -4,7 +4,7 @@ export const install = (trackingId, additionalConfigInfo = {}) => {
 
     if (document.getElementById(scriptId)) return;
 
-    const {head} = document;
+    const {head, body} = document;
     // const script = document.createElement('script');
     // script.id = scriptId;
     // script.type = 'text/javascript';
@@ -16,9 +16,17 @@ export const install = (trackingId, additionalConfigInfo = {}) => {
     script2.id = script2Id;
     script2.type = 'text/javascript';
     script2.async = true;
-    // script2.src = `https://www.googletagmanager.com/gtm.js?id=${trackingId}`;
     script2.src = `https://www.googletagmanager.com/gtm.js?id=GTM-MFQH35F`;
     head.insertBefore(script2, head.firstChild);
+
+    const noscript = document.createElement('noscript');
+    const iframe = document.createElement('iframe');
+    iframe.height = '0';
+    iframe.width = '0';
+    iframe.style = 'display:none;visibility:hidden';
+    script2.src = `https://www.googletagmanager.com/ns.html?id=GTM-MFQH35F`;
+    noscript.insertBefore(iframe, noscript.firstChild);
+    body.insertBefore(noscript, body.firstChild);
 
     window.dataLayer = window.dataLayer || [];
 
