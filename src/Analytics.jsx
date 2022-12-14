@@ -8,8 +8,8 @@ function Analytics(){
     const location = useLocation();
 
     if (!analytics_initialized) {
-        gaInitialize()
-        setAnalyticsUsed(true)
+        // gaInitialize()
+        // setAnalyticsUsed(true)
     }
 
     useEffect(() => {
