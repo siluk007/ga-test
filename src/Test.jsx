@@ -3,7 +3,7 @@ import './App.css';
 import {gaEvent} from "./gAnalytics";
 import {useState, useEffect} from "react";
 
-function Main() {
+function Test() {
     const [count, setCount] = useState(0)
 
     const buttonClick = (text) => {
@@ -24,8 +24,8 @@ function Main() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <div >
-                    <button onClick={() => buttonClick('first answer')}>first answer</button>
-                    <button onClick={() => buttonClick('second answer')}>second answer</button>
+                    <button onClick={() => buttonClick('5 answer')}>first answer</button>
+                    <button onClick={() => buttonClick('6 answer')}>second answer</button>
                     <button onClick={() => randButtonClick(rand_number)}>random {rand_number}</button>
                 </div>
             </header>
@@ -34,4 +34,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default Test;

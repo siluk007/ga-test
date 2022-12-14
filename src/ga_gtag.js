@@ -1,20 +1,30 @@
 export const install = (trackingId, additionalConfigInfo = {}) => {
     const scriptId = 'ga-gtag';
+    const script2Id = 'gtm';
 
     if (document.getElementById(scriptId)) return;
 
     const {head} = document;
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
-    head.insertBefore(script, head.firstChild);
+    // const script = document.createElement('script');
+    // script.id = scriptId;
+    // script.type = 'text/javascript';
+    // script.async = true;
+    // script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
+    // head.insertBefore(script, head.firstChild);
+
+    const script2 = document.createElement('script');
+    script2.id = script2Id;
+    script2.type = 'text/javascript';
+    script2.async = true;
+    // script2.src = `https://www.googletagmanager.com/gtm.js?id=${trackingId}`;
+    script2.src = `https://www.googletagmanager.com/gtm.js?id=GTM-MFQH35F`;
+    head.insertBefore(script2, head.firstChild);
 
     window.dataLayer = window.dataLayer || [];
 
-    gtag('js', new Date());
-    gtag('config', trackingId, additionalConfigInfo);
+    // gtag('js', new Date());
+    // gtag('config', trackingId, additionalConfigInfo);
+    gtag({'gtm.start': new Date().getTime(), event: 'gtm.js'});
 };
 
 export const gtag = function() {

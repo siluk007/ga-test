@@ -7,10 +7,6 @@ function About() {
     const buttonClick = (text) => {
         gaEvent('event', `custom_click`, {page: 'about', button: text});
     }
-    useEffect(() => {
-        gaEvent('_set', `title`, 'New About page');
-        gaEvent('_trackPageview');
-    }, []);
 
     return (
         <div className="App">
