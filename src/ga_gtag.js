@@ -24,7 +24,7 @@ export const install = (trackingId, additionalConfigInfo = {}) => {
     iframe.height = '0';
     iframe.width = '0';
     iframe.style = 'display:none;visibility:hidden';
-    script2.src = `https://www.googletagmanager.com/ns.html?id=GTM-MFQH35F`;
+    iframe.src = `https://www.googletagmanager.com/ns.html?id=GTM-MFQH35F`;
     noscript.insertBefore(iframe, noscript.firstChild);
     body.insertBefore(noscript, body.firstChild);
 
