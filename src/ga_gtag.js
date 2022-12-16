@@ -31,7 +31,6 @@ export const install = (trackingId, additionalConfigInfo = {}) => {
     iframe.style = 'display:none;visibility:hidden';
     iframe.src = `https://www.googletagmanager.com/ns.html?id=GTM-MFQH35F`;
     noscript.insertBefore(iframe, noscript.firstChild);
-    console.log('1', noscript)
     body.insertBefore(noscript, body.firstChild);
 
 
