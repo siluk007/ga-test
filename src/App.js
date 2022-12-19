@@ -7,6 +7,7 @@ import Analytics from "./Analytics"
 import Test from "./Test";
 import Test2 from "./Test2";
 import Test3 from "./Test3";
+import HeadwayWidget from "./HeadwayWidget";
 
 function App() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function App() {
             <Link to={"/test2"} >Test2</Link>
             <Link to={"/test3"} >Test3</Link>
           </nav>
+          <HeadwayWidget/>
           <Routes>
             <Route exact path="/" element={<Main/>}/>
             <Route exact path="/about" element={<About/>}/>
