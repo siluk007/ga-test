@@ -16,7 +16,7 @@ function About() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>About page</p>
-                <p><a href="https://github.com/siluk007/siluk007.github.io" target="_blank">Go to github</a></p>
+                <p><a href="https://github.com/siluk007/siluk007.github.io" target="_blank" rel="noreferrer">Go to github</a></p>
                 <div >
                     <button onClick={() => buttonClick('third answer')}>third answer</button>
                     <button onClick={() => buttonClick('fourth answer')}>fourth answer</button>

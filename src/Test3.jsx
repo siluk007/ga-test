@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {gaEvent} from "./gAnalytics";
 import {useState, useEffect} from "react";

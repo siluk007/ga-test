@@ -16,7 +16,7 @@ function Analytics(){
         if (analytics_initialized) {
             gaPageView();
         }
-    }, [location]);
+    }, [location, analytics_initialized]);
 
     return <></>;
 };
