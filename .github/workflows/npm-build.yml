@@ -1,8 +1,6 @@
 name: build project
 
-on:
-  release:
-    types: [created]
+on: [push]
 
 jobs:
   build:
