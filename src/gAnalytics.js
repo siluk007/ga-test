@@ -1,4 +1,4 @@
-import { gtag, install } from './ga_gtag';
+import { gtag, install, installAnalytics } from './ga_gtag';
 const google_key = "G-D2KQ2NJB5B";
 let is_initialize = false;
 
@@ -8,10 +8,11 @@ export const gaEvent = function (){
     }
 }
 
-export const gaInitialize = function (user_id = undefined) {
+export const gaInitialize = function () {
     if (!is_initialize) {
         is_initialize = true;
-        install(google_key);
+        install();
+        installAnalytics(google_key);
     }
 }
 
