@@ -14,7 +14,7 @@ export const sharedConfig = {
 
 export default defineConfig({
   site,
-  base: '/',
+  base: site,
   integrations: [
     starlight({
       ...sharedConfig,
