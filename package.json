@@ -6,8 +6,10 @@
   "scripts": {},
   "license": "Apache-2.0",
   "dependencies": {
+    "@pagefind/default-ui": "^1.1.0",
     "@rollup/rollup-darwin-arm64": "^4.13.0",
     "@rollup/rollup-linux-x64-gnu": "^4.13.0",
+    "pagefind": "^1.1.0",
     "sharp": "^0.32"
   },
   "devDependencies": {
