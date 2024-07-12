@@ -22,8 +22,13 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Prebuild
-        run: npm i pagefind @pagefind/linux-x64
+      - name: Install pagefind
+        run: |
+          mkdir -p /tmp/pagefind
+          wget -0- https://github.com/CloudCannon/pagefind/releases/download/v1.0.4/pagefind-v1.0.4-x86_64-unknown-linux-must.tar.gz | tar
+          xZ -C /tmp/pagefind/
+          chmod +x / tmp/pagefind/pagefind
+          echo "/tmp/pagefind" > $GITHUB_PATH
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         with:
