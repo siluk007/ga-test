@@ -100,7 +100,23 @@ export default defineConfig({
         {
           tag: 'script',
           attrs: {
-            src: site+'pagefind/pagefind.js',
+            src:'/pagefind/pagefind.js',
+            defer: true,
+            type: "module"
+          },
+        },
+        {
+          tag: 'script',
+          attrs: {
+            src:'/pagefind/pagefind-highlight.js',
+            defer: true,
+            type: "module"
+          },
+        },
+        {
+          tag: 'script',
+          attrs: {
+            src:'/pagefind/pagefind-ui.js',
             defer: true,
             type: "module"
           },
