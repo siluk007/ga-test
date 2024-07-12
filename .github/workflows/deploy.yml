@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-11
+    runs-on: macos-13
     env:
       NPM_CONFIG_OPTIONAL: false
     steps:
@@ -31,7 +31,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: macos-11
+    runs-on: macos-13
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
