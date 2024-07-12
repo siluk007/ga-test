@@ -13,7 +13,6 @@ export const sharedConfig = {
 }
 
 export default defineConfig({
-  site,
   base: site,
   integrations: [
     starlight({
@@ -22,12 +21,6 @@ export default defineConfig({
         light: '/src/assets/logo-light.svg',
         dark: '/src/assets/logo-dark.svg',
         replacesTitle: true,
-      },
-      editLink: {
-        baseUrl: 'https://github.com/meefoundation/docs/edit/develop/docs/',
-      },
-      social: {
-        github: 'https://github.com/MeeFoundation',
       },
       customCss: process.env.NO_GRADIENTS ? [] : ['/src/assets/landing.css'],
       locales: {
