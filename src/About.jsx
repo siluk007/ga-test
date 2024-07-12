@@ -1,17 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import {gaEvent} from "./gAnalytics";
-import {useEffect} from "react";
+import { gaEvent } from './gAnalytics';
+import { useEffect } from 'react';
 
-function About() {
-    const buttonClick = (text) => {
-        gaEvent('event', `custom_click`, {page: 'about', button: text});
-    }
-    useEffect(() => {
-        document.title = 'About';
-    }, []);
+function About () {
+  const buttonClick = (text) => {
+    gaEvent('event', 'custom_click', { page: 'about', button: text });
+  };
+  useEffect(() => {
+    document.title = 'About';
+  }, []);
 
-    return (
+  return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
@@ -23,7 +23,7 @@ function About() {
                 </div>
             </header>
         </div>
-    );
+  );
 }
 
 export default About;

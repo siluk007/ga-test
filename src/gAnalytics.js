@@ -1,22 +1,20 @@
 import { gtag, install, installAnalytics } from './ga_gtag';
-const google_key = "G-D2KQ2NJB5B";
-let is_initialize = false;
+const googleKey = 'G-D2KQ2NJB5B';
+let isInitialize = false;
 
-export const gaEvent = function (){
-    if (is_initialize) {
-        gtag(...arguments);
-    }
-}
+export const gaEvent = function () {
+  if (isInitialize) {
+    gtag(...arguments);
+  }
+};
 
 export const gaInitialize = function () {
-    if (!is_initialize) {
-        is_initialize = true;
-        install();
-        installAnalytics(google_key);
-    }
-}
+  if (!isInitialize) {
+    isInitialize = true;
+    install();
+    installAnalytics(googleKey);
+  }
+};
 
 export const gaPageView = function () {
-    if (is_initialize) {
-    }
-}
+};
