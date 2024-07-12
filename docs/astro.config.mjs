@@ -95,6 +95,16 @@ export default defineConfig({
         Sidebar: './src/components/MultiSidebar.astro',
         EditLink: './src/components/EditLink.astro',
       },
+      head: [
+        // Example: add Fathom analytics script tag.
+        {
+          tag: 'script',
+          attrs: {
+            src: site+'/pagefind/pagefind.js',
+            defer: true,
+          },
+        },
+      ],
     }),
   ],
 });
