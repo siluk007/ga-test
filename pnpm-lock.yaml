@@ -17,6 +17,9 @@ importers:
       '@rollup/rollup-linux-x64-gnu':
         specifier: ^4.13.0
         version: 4.13.0
+      '@rollup/rollup-win32-x64-msvc':
+        specifier: ^4.19.0
+        version: 4.19.0
       pagefind:
         specifier: ^1.1.0
         version: 1.1.0
@@ -1390,6 +1393,12 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@rollup/rollup-win32-x64-msvc@4.19.0:
+    resolution: {integrity: sha512-xNo5fV5ycvCCKqiZcpB65VMR11NJB+StnxHz20jdqRAktfdfzhgjTiJ2doTDQE/7dqGaV5I7ZGqKpgph6lCIag==}
+    cpu: [x64]
+    os: [win32]
+    dev: false
 
   /@shikijs/core@1.10.3:
     resolution: {integrity: sha512-D45PMaBaeDHxww+EkcDQtDAtzv00Gcsp72ukBtaLSmqRvh0WgGMq3Al0rl1QQBZfuneO75NXMIzEZGFitThWbg==}
