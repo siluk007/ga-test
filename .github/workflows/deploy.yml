@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: macos-14
     env:
       NPM_CONFIG_OPTIONAL: false
     steps:
